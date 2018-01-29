@@ -1,0 +1,22 @@
+/* .in-block{
+    display: inline-block;
+}
+td{
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    width: 150px;
+} */
+.container-fluid{
+    padding: 0;
+}
+#map {
+    min-width: 100%;
+    max-width: 100%; 
+    height: 400px;
+}
+.dis{
+    text-align: center;
+}

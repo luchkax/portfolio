@@ -1,0 +1,11 @@
+<h1>Reviews</h1>
+@{
+    foreach (var item in ViewBag.reviews)
+    {
+        <h3>Review for @item.Restaurant = @item.Rating stars</h3>
+        <h4> Reviewer: @item.Reviewer on @item.Date.ToString("MMMM d, yyyy")</h4>
+        <p>@item.Content</p>
+        <hr>
+    }
+}
+<a href="/">Home</a>

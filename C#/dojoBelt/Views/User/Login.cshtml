@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Log In";
+}
+@model dojoBelt.Models.Login
+<h1>Login</h1>
+<hr>
+<form asp-controller="User" asp-action="Login" method="post">
+    <span asp-validation-for="Email"></span>
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/>
+    @ViewBag.email
+    <br>
+    <span asp-validation-for="Password"></span>
+    <label asp-for="Password"></label>
+    <input asp-for="Password"/>
+    @ViewBag.password
+    <br>
+    <button type="submit">Login</button>
+</form>
+<hr>
+<p>Back to <a href="/">Registration</a></p>

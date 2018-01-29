@@ -1,0 +1,57 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtDm9Lv403kW35Ki8tKVntzuZKqsiRzb0&callback=initMap" async defer></script>
+
+@using wedding_planner.Models;
+@using System;
+@using System.Linq;
+@{
+    ViewData["Title"] = "";
+}
+@Html.Partial("navbarPartial")
+<div class="container">
+    <div class="row dis">
+        <h1>@ViewBag.Event.WedderOne + @ViewBag.Event.WedderTwo 's Wedding </h1>
+        <h3>@ViewBag.Event.Event_Date.ToString("MMM-dd-yyyy")</h3>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-sm-offset-2 col-md-offset-2">
+            <h3>Guest:</h3>
+            @{
+                foreach(Guests thisguest in @ViewBag.Event.Guests)
+                {
+                    <p>@thisguest.user.FirstName @thisguest.user.LastName</p>
+                }
+            }
+        </div>
+        <div class="col-md-5 col-sm-5">
+            <p id="address">@ViewBag.Event.Address</p>
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+<script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: {lat: 41.878, lng: -87.629}
+        });
+        var geocoder = new google.maps.Geocoder();
+
+        geocodeAddress(geocoder, map);
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').innerHTML;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+    </script>

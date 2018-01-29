@@ -1,0 +1,50 @@
+@using wedding_planner.Models;
+@using System;
+@using System.Linq;
+@{
+    ViewData["Title"] = "All";
+}
+@Html.Partial("navbarPartial")
+<div class="container">
+    <div class="row">
+        <table class="table-bordered table-striped table">
+            <tr>
+                <th>Wedding</th>
+                <th>Date</th>
+                <th>Guests</th>
+                <th>Action</th>
+            </tr>
+            @{
+                foreach(Event thisevent in ViewBag.theEvents)
+                {
+                    <tr>
+                        <td><a href="/display/@thisevent.EventId">@thisevent.WedderOne + @thisevent.WedderTwo</a></td>
+                        <td>@thisevent.Event_Date.ToString("dd/MM/yyyy")</td>
+                        <td>@thisevent.Guests.Count()</td>
+                        @if(@thisevent.Creator_Id == @ViewBag.currentUser)
+                        {
+                            <form action="/delete" method="post">
+                                <input type="hidden" value="@thisevent.EventId" name="eventId">
+                                <td><input type="submit" value="Delete"></td>
+                            </form>
+                        } else{
+                            @if(@thisevent.Guests.Any(u => u.UserId == @ViewBag.currentUser))
+                            {
+                                <form action="/UN-RSVP" method="post">
+                                    <input type="hidden" value="@thisevent.EventId" name="eventId">
+                                    <td><input type="submit" value="UN-RSVP"></td>
+                                </form>
+                            } else {
+                                <form action="/RSVP" method="post">
+                                    <input type="hidden" value="@thisevent.EventId" name="eventId">
+                                    <td><input type="submit" value="RSVP"></td>
+                                </form>
+                            }
+                        }
+                        
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>

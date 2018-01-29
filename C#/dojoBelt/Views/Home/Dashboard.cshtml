@@ -1,0 +1,50 @@
+
+<h1>Dojo Activity Center</h1>
+<a href="/logout">Log off</a>
+<hr>
+<h3><a href="/new">Add new activity</a></h3>
+<br>
+<table class="table">
+        <tr>
+            <th>ACTIVITY</th>
+            <th>DATE and TIME</th>
+            <th>DURATION</th>
+            <th>EVENT COORDINATOR</th>
+            <th>NUMBER OF PARTICIPANTS</th>
+            <th>ACTIONS</th>
+        </tr>
+
+
+      
+      @foreach (var act in ViewBag.ACT)
+       {    
+           @if(@act.ActivityDate >=  ViewBag.DateTimeNow)
+           {
+                <tr>
+                    <th><a href="/activity/@act.ActivityId">@act.Title</a></th>
+                    <th>@act.ActivityDate.ToString("MMM-dd-yyyy") @act.ActivityTime</th>
+                    <th>@act.Duration hours</th>
+                    <th>@act.Creator.FirstName</th>
+                    <th>@ViewBag.count</th>
+                           
+                    
+                
+                    
+                
+                    
+                    @if(ViewBag.loggeduser != @act.UserId)
+                    {      
+                    <th><a href="/join/@act.ActivityId">Join</a> | <a href="/leave/@act.ActivityId">Leave</a></th>
+
+                        }
+                        else{
+                            <th><a href="/delete/@act.ActivityId">Delete</a> </th>
+                        }
+              </tr> 
+           }
+  }
+
+     
+    
+
+

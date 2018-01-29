@@ -1,0 +1,45 @@
+@model wall.Models.ViewModels
+<h1>Registration</h1>
+<form asp-controller="Home" asp-action="register" method="post">
+    <label asp-for="Reg.FirstName">First Name</label>
+    <input asp-for="Reg.FirstName"/>
+    <span asp-validation-for="Reg.FirstName"></span>
+
+    <br>
+    <label asp-for="Reg.LastName">Last Name</label>
+    <input asp-for="Reg.LastName"/>
+    <span asp-validation-for="Reg.LastName"></span>
+    <br>
+    <label asp-for="Reg.Email"></label>
+    <input asp-for="Reg.Email"/>
+    <span asp-validation-for="Reg.Email"></span>
+
+    <br>
+    <label asp-for="Reg.Password"></label>
+    <input asp-for="Reg.Password"/>
+    <span asp-validation-for="Reg.Password"></span>
+
+     <br>
+    <label asp-for="Reg.confirmPassword">Confirm password</label>
+    <input asp-for="Reg.confirmPassword" type="password"/>
+    <span asp-validation-for="Reg.confirmPassword"></span>
+
+    <br>
+    <button type="submit">Register</button>
+</form>
+<br>
+<h1>Login</h1>
+<form asp-controller="Home" asp-action="Login" method="post">
+    <span asp-validation-for="Log.Email"></span>
+    <label asp-for="Log.Email"></label>
+    <input asp-for="Log.Email"/>
+    @ViewBag.email
+    <br>
+    <span asp-validation-for="Log.Password"></span>
+    <label asp-for="Log.Password"></label>
+    <input asp-for="Log.Password"/>
+    @ViewBag.password
+    <br>
+    <button type="submit">Login</button>
+</form>
+

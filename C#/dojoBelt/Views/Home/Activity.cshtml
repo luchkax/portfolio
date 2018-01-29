@@ -1,0 +1,17 @@
+<h1>Dojo Activity Center</h1>
+<a href="/logout">Log off</a> || <a href="/dashboard">Home</a>
+
+        <h1>@ViewBag.act.Title</h1>
+        <h3>Event coordinator: @ViewBag.tr</h3>
+        <h3>Description:</h3>
+        <br>
+        <p>@ViewBag.act.Description</p>
+        <br>
+        <h3><a href="/leave"</h3></a>
+
+    @{
+        foreach (var guest in @ViewBag.act.Guests)
+        {
+            <h4>@guest.User.FirstName</h4>
+        }
+    }

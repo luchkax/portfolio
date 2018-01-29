@@ -1,0 +1,40 @@
+<h1>C0DER WALL </h1>
+<p>Loged in as <a href="success">@TempData["name"]</a> ID @TempData["id"]</p> 
+<a href="/logout">| LOGOUT |</a>
+<hr>
+<h3>What's on your mind? </h3>
+<form asp-action="CreateMessage" asp-controller="Main" asp-method="post">
+    <textarea class="form-control" rows="5" name="message"></textarea>
+    <br>
+    <button class="btn btn-info" type="submit">Post</button>
+</form>
+@{
+    foreach (var message in ViewBag.messages)
+                {   
+                    <h2>@message["first_name"]</h2>
+                    <h4>@message["message"]</h4>
+                    <h5>@message["created_at"]</h5>
+                    int messageId = message["idmessage"];
+                    <br>
+                    <h4>Comments</h4>
+                     @foreach (var comment in ViewBag.comments)
+                               {
+                                   @if(comment["message_idmessage"] == message["idmessage"])
+                                   {
+                                        <h5>@comment["first_name"] @comment["last_name"]</h5>
+                                        <p>@comment["comment"]</p>
+                                        <h6>@comment["created_at"]</h6>
+                                    }
+                               }
+                        <div class="comment">
+                                <form asp-action="CreateComment" asp-controller="Main" > 
+                                    <textarea class="form-control" rows="3" name="comment"></textarea>
+                                    <input type="hidden" name="message_id" value="@messageId">
+                                    <br>
+                                    <button class="btn btn-info" type="submit">Comment!</button>
+                                </form>
+                              
+                        </div>
+                        <hr>
+                }
+}
