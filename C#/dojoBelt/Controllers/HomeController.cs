@@ -144,29 +144,15 @@ namespace dojoBelt.Controllers
             else
             {
                 Guest exists = _context.Guests.Where(b=>b.ActivityId == activityId).Include(o=>o.User).FirstOrDefault();
-                // if(exists.UserId == id)
-                // {
-                //     return RedirectToAction("Dashboard");
-                // }
-                // else
-                // {
+
                     Guest newGuest = new Guest
                     {
                         ActivityId = activityId,
                         UserId = (int)id
                     };
                     _context.Guests.Add(newGuest);
-                    if(newGuest.UserId != exists.User.UserId)
-                    {
-                        _context.SaveChanges();
-                        return RedirectToAction("ActivityPage", new{activityId = activityId});
-
-                    }
-                    else
-                    {
-                        return RedirectToAction("Dashboard");
-                    }
-                // }
+                    _context.SaveChanges();
+                    return RedirectToAction("ActivityPage", new{activityId = activityId});
             }
         }
 
