@@ -1,1 +1,3 @@
-# portfolio
+This folder contains variety of my big and more complex projects, written on experienced languages. 
+
+*Projects updating...
