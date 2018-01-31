@@ -1,0 +1,27 @@
+<h1><a href="/dashboard">Home</a> || <a href="/logout"></a>Logout</h1>
+<hr>
+@{
+        <h4>@ViewBag.name says:</h4>
+        <p>@ViewBag.Post.Content</p>
+
+<br>
+<hr>
+    <h4>People who liked this post:</h4>
+<table>
+    <tr>
+        <th>NAME</th>
+    </tr>
+    @foreach (var liker in @ViewBag.LikesList)
+    {
+    
+    <tr>
+        <td><a href="/user/@liker.UserId"> @liker.UserId </a></td>
+    </tr>
+    }
+</table>
+
+    }
+
+
+
+    
