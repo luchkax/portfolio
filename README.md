@@ -1,3 +1,2 @@
-This folder contains variety of my big and more complex projects, written on experienced languages. 
-
-*Projects updating...
+---------------IDEAS
+My Exam project. Showed my ability to do multifunctional complex CRUD tasks with PostgreSQL. Project built on ASP.NET framework, written on C#. Showed skills with managing Many-to-Many relationships between database tables. Website allows user Register and Login. All validations regarding password and email work. User can post ideas, read through them and which one he finds best he can like them and also delete. Also user can check other user’s page, with the information about his actions displayed: posts liked, posts created. User has no action to access main feed without logging into the system. 
