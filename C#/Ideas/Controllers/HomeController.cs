@@ -35,9 +35,14 @@ namespace dojoTest.Controllers
             {   
                 List<User> Users = _context.Users.Include(p=>p.Posts).ThenInclude(l=>l.Likes).ToList();
                 List<Post> Posts = _context.Posts.Include(u=>u.Likes).OrderByDescending(x => x.Created_At).ToList();
+                User selectedUser = _context.Users.Where(u=>u.UserId == id).Include(p=>p.Posts).ThenInclude(l=>l.Likes).SingleOrDefault();
+                // Like exists = _context.Likes.Where(p=>p.PostId == Posts.).Where(u=>u.UserId == id).FirstOrDefault();
+
+
 
                 ViewBag.LoggedinUser = id;
                 ViewBag.AllPosts = Posts;
+                ViewBag.User = selectedUser;
                 ViewBag.UserName = HttpContext.Session.GetString("name");
                 return View("Dashboard");
             }
@@ -86,8 +91,9 @@ namespace dojoTest.Controllers
             else
             {
                 User selectedUser = _context.Users.Where(u=>u.UserId == userId).Include(p=>p.Posts).ThenInclude(l=>l.Likes).SingleOrDefault();
+                List<Like> userLikes = _context.Likes.Where(u=>u.UserId == userId).ToList();
                 
-
+                ViewBag.Likes = userLikes;
                 ViewBag.User = selectedUser;
                 return View("UserPage");
             }
@@ -114,12 +120,18 @@ namespace dojoTest.Controllers
                     };
                     _context.Likes.Add(newLike);
                     _context.SaveChanges();
+                    
+                    // bool heart = true;
+                    
+                    // ViewBag.heart = heart;
                     return RedirectToAction("Dashboard");
                 }
                 else
                 {
                     _context.Likes.Remove(exists);
                     _context.SaveChanges();
+                    // bool heart = false;
+                    // ViewBag.heart = heart;                
                     return RedirectToAction("Dashboard");
                 }
             }
@@ -139,7 +151,8 @@ namespace dojoTest.Controllers
                 Post selectedPost = _context.Posts.Where(u=>u.PostId == postId).Include(l=>l.Likes).SingleOrDefault();
                 Like likes = _context.Likes.Where(p=>p.PostId == postId).FirstOrDefault();
                 User selectedUser = _context.Users.Where(u=>u.UserId == selectedPost.UserId).FirstOrDefault();
-                List<Like> likesList = _context.Likes.Where(p=>p.PostId == postId).ToList();
+                List<Like> likesList = _context.Likes.Where(p=>p.PostId == postId).Include(u=>u.LikedBy).ToList();
+                // List<User> userswholiked = _context.Users.Include(users=>users.)
 
                 // User users = _context.Users.Include(user=>user.Likes).Where(l=>l.PostId == selectedUser.UserId).FirstOrDefault();
 

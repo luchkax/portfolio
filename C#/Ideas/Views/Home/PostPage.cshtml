@@ -1,4 +1,5 @@
-<h1><a href="/dashboard">Home</a> || <a href="/logout"></a>Logout</h1>
+<h1><a href="/dashboard">Home</a></h1>
+ |<a href="/logout">Logout</a>|
 <hr>
 @{
         <h4>@ViewBag.name says:</h4>
@@ -15,7 +16,7 @@
     {
     
     <tr>
-        <td><a href="/user/@liker.UserId"> @liker.UserId </a></td>
+        <td><a href="/user/@liker.UserId"> @liker.LikedBy.FirstName </a></td>
     </tr>
     }
 </table>
