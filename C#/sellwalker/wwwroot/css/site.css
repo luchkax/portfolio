@@ -1,0 +1,258 @@
+
+.page-header h1 {
+    margin-left: 105px; 
+}
+
+.addproduct {
+    width: 400px;
+    margin: 0px auto;
+}
+.main{
+    background-color: #F8F8F8;
+    padding: 1px 15px 15px 15px;
+    border-radius: 5px;
+}
+/* .mainHome h2{
+   margin: 200px;
+} */
+
+.mainSettings h1{
+    margin-left: 370px;
+}
+.left{
+    width: 400px;
+    background-color: #F8F8F8;
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+.input{
+    margin-top: 15px;
+    /* margin-left: 30px; */
+}
+.right{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 90px;
+}
+.right img{
+    border-radius: 30px;
+    max-height: 350px;
+    max-width: 330px;
+}
+.editMain{
+    width: 400px;
+    display: inline-block;
+}
+.editPic img{
+    width: 400px;
+    height: auto;
+    border-radius: 3px;
+    
+}
+.editPic{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 100px;
+    margin-top: 25px;
+}
+.picture img{
+    border-radius: 10px;
+    height: 350px;
+    max-width: 500px;
+}
+.header{
+    color: white;
+    margin-top:-20px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.header p{
+    /* margin-left: 420px; */
+}
+.card1{
+    border-radius: 10px;
+    padding-top: 1px;
+    padding-bottom: 10px;
+}
+.card-block1 h3{
+    margin-left: 480px;
+}
+.card-block1 p{
+    margin-left: 320px;
+}
+.card-block1 a{
+    margin-left: 485px;
+}
+.mainProduct{
+    margin-bottom: 35px;
+}
+.picture{
+    display: inline-block;
+}
+.content{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 40px;
+}
+.content img{
+    width: 30px;
+    height: auto;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.content a{
+    text-decoration: none;
+}
+.content h2{
+}
+.restProducts img{
+    width: 180px;
+    height: auto;
+}
+.card{
+    margin: 10px;
+    display: inline-block;
+}
+.card img{
+    border-radius: 5px;
+}
+.mainCustomerControl{
+    width: 800px;
+    margin: 0px auto;
+}
+.mainCustomerControl h1{
+    margin-left: 120px;
+}
+.leftUser{
+    display: inline-block;
+    width:400px;
+    padding-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    
+
+}
+.leftUser a{
+    text-decoration: none;
+
+}
+.leftUser img{
+    width: 270px;
+    max-height: 300px;
+    border-radius: 5px;
+
+}
+.rightUser{
+    display: inline-block;
+    width: 680px;
+    vertical-align: top;
+    margin-left: 20px;
+}
+.rightUser img{
+    width: 180px;
+    height: auto;
+}
+.rightUser h2{
+    margin-left: 160px;
+}
+.editUser{
+    width: 600px;
+    height: auto;
+    margin: 0px auto;
+    background-color: #F8F8F8;
+    padding: 0px 15px 15px 15px;
+    border-radius: 5px;
+}
+.editUser p{
+    display: inline-block;
+    margin-left: 5px;
+
+}
+.editUser h3{
+    display: inline-block;
+    color: grey;
+}
+.productHome img{
+    max-width: 180px;
+    height: auto;
+}
+.productHome{
+    /* width: 120px; */
+    /* height: auto; */
+    display: inline-block;
+}
+.searchHome{
+    width: 800px;
+    margin: 0px auto;
+    padding: 25px 0px 25px 0px;
+    /* background-color: #666666; */
+}
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+.tableCart{
+    width: 800px;
+    margin: 0px auto;
+
+}
+.tableCart img{
+    max-width: 100px;
+    height:auto;
+    display: inline-block;
+}
+.tableCart h3{
+    display: inline-block;
+    margin-left: 50px;
+}
+.priceCart{
+    display: inline-block;
+    color: gray; 
+    margin-left: 120px;
+}
+.sellerCart{
+    display: inline-block;
+    padding-top: 10px;
+}
+.deleteCart{
+    display: inline-block;
+    margin-left: 672px;
+}
+.checkoutCart{
+    margin-left: 696px;
+    display: inline-block;
+}
