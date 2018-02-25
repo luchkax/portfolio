@@ -1,0 +1,10 @@
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/bin/Debug/netcoreapp1.1/sellwalker.deps.json
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/bin/Debug/netcoreapp1.1/sellwalker.runtimeconfig.json
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/bin/Debug/netcoreapp1.1/sellwalker.runtimeconfig.dev.json
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/bin/Debug/netcoreapp1.1/sellwalker.dll
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/bin/Debug/netcoreapp1.1/sellwalker.pdb
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/obj/Debug/netcoreapp1.1/sellwalker.csproj.CoreCompileInputs.cache
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/obj/Debug/netcoreapp1.1/sellwalker.AssemblyInfoInputs.cache
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/obj/Debug/netcoreapp1.1/sellwalker.AssemblyInfo.cs
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/obj/Debug/netcoreapp1.1/sellwalker.dll
+/Users/LuchkaMAC/CODE/PROJECT/sellwalker/obj/Debug/netcoreapp1.1/sellwalker.pdb

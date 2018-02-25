@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "LOGIN | SellWalker";
+}
+@model sellwalker.Models.Login
+
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/login">SellWalker</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+            <a href="/">Registration</a>
+        </li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="login">
+      <div class="login-wrap">
+      <h2>Login</h2>
+      
+      <form asp-controller="User" asp-action="Login" method="post">
+        <br>
+        <input  asp-for="Email" type="text" placeholder="Email"/> 
+        <span asp-validation-for="Email"></span>
+        @ViewBag.email
+        <input asp-for="Password" type="password" placeholder="Password" />
+        <span asp-validation-for="Password"></span>
+        @ViewBag.password
+        <button type="submit">Sign in </button>
+      </form>
+        <a href="/"> <p> Don't have an account? Register </p></a>
+      </div>
+    </div>
+    <hr>
+</div>
