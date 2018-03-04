@@ -10128,11 +10128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/LuchkaMAC/CODE/PROJECT/sellwalker/sellwalker.csproj",
+      "projectUniqueName": "/Users/LuchkaMAC/CODE/Portfolio/C#/sellwalker.csproj",
       "projectName": "sellwalker",
-      "projectPath": "/Users/LuchkaMAC/CODE/PROJECT/sellwalker/sellwalker.csproj",
+      "projectPath": "/Users/LuchkaMAC/CODE/Portfolio/C#/sellwalker.csproj",
       "packagesPath": "/Users/LuchkaMAC/.nuget/packages/",
-      "outputPath": "/Users/LuchkaMAC/CODE/PROJECT/sellwalker/obj/",
+      "outputPath": "/Users/LuchkaMAC/CODE/Portfolio/C#/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/LuchkaMAC/.nuget/NuGet/NuGet.Config"

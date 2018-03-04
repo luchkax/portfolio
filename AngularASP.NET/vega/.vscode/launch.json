@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/vega/bin/Debug/netcoreapp2.0/vega.dll",
+            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.0/vega.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/vega",
+            "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {
