@@ -44,6 +44,7 @@ namespace dojoTest.Controllers
             }
             else
             {   
+                
                 return RedirectToAction("Homepage", "Home");
             }    
         }
@@ -57,6 +58,7 @@ namespace dojoTest.Controllers
                 User exists = _context.Users.SingleOrDefault(user=>user.Email == regUser.Email);
                 if(exists !=null)
                 {
+                    ViewBag.error = "ERRRO exists";
                     ModelState.AddModelError("Email", "An account with this email already exists!");
                     return View("Register");
                 }
@@ -77,6 +79,9 @@ namespace dojoTest.Controllers
                     User user = _context.Users.Where(u=>u.Email == regUser.Email).SingleOrDefault();
                     HttpContext.Session.SetInt32("userId", user.UserId);
                     HttpContext.Session.SetString("user", user.FirstName);
+                    user.ReviewedId = user.UserId;
+                    _context.SaveChanges();
+                    
                     if(user.Status == "Admin")
                     {
                        return RedirectToAction("HomepageAdmin", "Home");
@@ -89,6 +94,7 @@ namespace dojoTest.Controllers
             }
             else
             {
+                ViewBag.error = "ERROR";
                 return View("Register");
             }
         }
