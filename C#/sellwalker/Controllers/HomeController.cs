@@ -50,6 +50,15 @@ namespace sellwalker.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("/api/xyz")]
+        public async Task<IActionResult> ShowAllEmployees()
+        {
+            List<User> users = await _context.Users.ToListAsync();
+            return Ok(users);
+        }
+
+
 
 // RENDER HOMEPAGE //
         [HttpGet]
@@ -703,6 +712,8 @@ namespace sellwalker.Controllers
                 }
             }
         }
+
+
 
 
     }               
