@@ -1,4 +1,36 @@
-<div ng-app="myApp" ng-controller="myCntrl">
+<div ng-app="app" ng-controller="pController">
       <p>{{ 1+2 }}</p>
-      <p>{{ hellomodel }}</p>
+
+<table>
+    <tr>
+        <th>CompanyId</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Workers</th>
+    </tr>
+    <tr ng-repeat="i in data">
+        <td>{{ i.companyId }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.address }}</td>
+        <td>{{ i.workers }}</td>
+
+    </tr>
+</table>
+<hr>
+<table>
+    <tr>
+        <th>Employee Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Company</th>
+    </tr>
+    <tr ng-repeat="e in emp">
+        <td>{{ e.companyId }}</td>
+        <td>{{ e.firstName }}</td>
+        <td>{{ e.email }}</td>
+        <td>{{ e.companyId }} </td>
+    </tr>
+</table>
+
+
     </div>

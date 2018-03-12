@@ -82,7 +82,7 @@ namespace employeesFactory.Controllers
         [Route("/api/employees")]
         public async Task<IActionResult> ShowAllEmployees()
         {
-            var result  = await _context.Employees.Include(c=>c.Company).ToListAsync();
+            var result  = await _context.Employees.ToListAsync();
             return Json(result);
         }
     }

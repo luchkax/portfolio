@@ -1,4 +1,3 @@
-var myapp = angular.module("myApp", []);
-    myapp.controller("myCntrl", function ($scope) {
-        $scope.hellomodel = "Hello World!";
-    });
+var app = angular.module('app', ['ngRoute']);
+
+app.controller('pController', ['$scope']);
