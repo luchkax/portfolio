@@ -70,7 +70,7 @@ namespace employeesFactory.Controllers
         // }
 
 
-        [HttpGet]
+        [HttpGet] 
         [Route("/api/companies")]
         public async Task<List<Company>>  ShowAllCompanies()
         {
