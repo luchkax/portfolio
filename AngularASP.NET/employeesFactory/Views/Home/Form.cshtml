@@ -13,7 +13,7 @@
               <input class="form-control" name="email" id="email" ng-model="Email"> 
               <br>
                 <select >
-                <option  ng-model="CompanyId" id="companyId" value="{{ x.companyId }}" ng-repeat="x in data">{{ x.name }}</option></select>
+                <option  ng-model="CompanyId" name="companyId" value="{{ x.companyId }}" ng-repeat="x in data">{{ x.name }}</option></select>
             </div>
           
             <button type="submit" value="submit" class="btn btn-primary" >Done</button>

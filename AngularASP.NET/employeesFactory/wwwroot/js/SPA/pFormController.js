@@ -22,7 +22,7 @@ app.controller('pFormController', function($scope, pService){
         Person.FirstName = $scope.FirstName;
         Person.LastName = $scope.LastName;
         Person.Email = $scope.Email;
-        Person.CompanyId = 4;
+        Person.CompanyId = $scope.;
 
         var promisePost = pService.postForm(Person);
         console.log(Person);

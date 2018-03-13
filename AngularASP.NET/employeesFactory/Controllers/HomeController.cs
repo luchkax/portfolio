@@ -64,6 +64,13 @@ namespace employeesFactory.Controllers
             {
                 return BadRequest(ModelState);
             }
+            Employee newEmployee = new Employee
+            {
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+                Email = person.Email,
+                CompanyId = person.CompanyId
+            };
            _context.Add(person);
            _context.SaveChanges();
 
