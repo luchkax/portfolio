@@ -55,26 +55,21 @@ namespace employeesFactory.Controllers
 
         [HttpPost]
         [Route("/addEmployee")]
-        public IActionResult Add(EmployeeCheck person)
+        public IActionResult Add([FromBody] Employee person)
         {
+            System.Console.WriteLine("-----------------------------------------------"+person.FirstName);
+            System.Console.WriteLine("-----------------------------------------------"+person.CompanyId);
+
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
            _context.Add(person);
            _context.SaveChanges();
-           
+
             return RedirectToAction("Index");
         }
 
-        // [HttpGet]
-        // [Route("/api/companies")]
-        // public IActionResult ShowAllCompanies()
-        // {
-        //     var companies =  _context.Companies.All(w => w.Include(t=>t.Workers)).ToList();
-        //     return Ok(companies);
-        // }
 
 
         [HttpGet] 

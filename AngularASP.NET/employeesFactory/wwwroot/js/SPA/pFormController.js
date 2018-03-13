@@ -1,4 +1,4 @@
-app.controller('pFormController', function($scope, $timeout, pService){
+app.controller('pFormController', function($scope, pService){
     $scope.data = null;
     $scope.company = null;
      $scope.companies = null;
@@ -22,9 +22,10 @@ app.controller('pFormController', function($scope, $timeout, pService){
         Person.FirstName = $scope.FirstName;
         Person.LastName = $scope.LastName;
         Person.Email = $scope.Email;
-        Person.CompanyId = $scope.CompanyId;
+        Person.CompanyId = 4;
 
         var promisePost = pService.postForm(Person);
+        console.log(Person);
     }, function (err) {
         alert("Some error occured");
     };

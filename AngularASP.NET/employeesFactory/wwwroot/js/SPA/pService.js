@@ -9,8 +9,13 @@ app.service("pService", function($http){
         return req;
     }
 
-    this.postForm = function(){
-        var req = $http.post('/addEmployee');
+    // this.postForm = function(){
+    //     var req = $http.post('/addEmployee');
+    //     return req;
+    // }
+
+    this.postForm = function(Person){
+        var req = $http.post('/addEmployee', Person);
         return req;
     }
 })

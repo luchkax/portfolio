@@ -1,5 +1,5 @@
 <div ng-controller="pFormController">
-    <form >
+    <form role="form" ng-submit="submitForm()">
         {{ 1+2 }}
         <h2>Form</h2>
             <div class="form-group">
@@ -16,7 +16,7 @@
                 <option  ng-model="CompanyId" id="companyId" value="{{ x.companyId }}" ng-repeat="x in data">{{ x.name }}</option></select>
             </div>
           
-            <button type="submit" class="btn btn-primary" ng-click="submitForm">Done</button>
+            <button type="submit" value="submit" class="btn btn-primary" >Done</button>
           </form>
 </div>
 
