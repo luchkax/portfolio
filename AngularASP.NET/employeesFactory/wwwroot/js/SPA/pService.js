@@ -8,4 +8,9 @@ app.service("pService", function($http){
         var req = $http.get('/api/employees');
         return req;
     }
+
+    this.postForm = function(){
+        var req = $http.post('/addEmployee');
+        return req;
+    }
 })

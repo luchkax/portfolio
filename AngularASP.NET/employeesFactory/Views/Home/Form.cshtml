@@ -1,0 +1,22 @@
+<div ng-controller="pFormController">
+    <form >
+        {{ 1+2 }}
+        <h2>Form</h2>
+            <div class="form-group">
+              <label for="firstName"> First Name</label> 
+              <input class="form-control" name="firstName" id="firstName" ng-model="FirstName"> 
+              <br>
+              <label for="lastName"> Last Name</label> 
+              <input class="form-control" name="lastName" id="lastName" ng-model="LastName"> 
+              <br>
+              <label for="email">Email</label> 
+              <input class="form-control" name="email" id="email" ng-model="Email"> 
+              <br>
+                <select >
+                <option  ng-model="CompanyId" id="companyId" value="{{ x.companyId }}" ng-repeat="x in data">{{ x.name }}</option></select>
+            </div>
+          
+            <button type="submit" class="btn btn-primary" ng-click="submitForm">Done</button>
+          </form>
+</div>
+

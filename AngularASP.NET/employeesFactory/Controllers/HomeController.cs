@@ -31,7 +31,15 @@ namespace employeesFactory.Controllers
         }
 
         [HttpGet]
-        [Route("/add")]
+        [Route("/form")]
+        public IActionResult Form()
+        {
+            
+            return View("Form");
+        }
+
+        [HttpPost]
+        [Route("/addCompany")]
         public IActionResult Index2()
         {
             Company newCompany = new Company
@@ -45,19 +53,18 @@ namespace employeesFactory.Controllers
         }
 
 
-        [HttpGet]
-        [Route("/add2")]
-        public IActionResult Add()
+        [HttpPost]
+        [Route("/addEmployee")]
+        public IActionResult Add(EmployeeCheck person)
         {
-            Employee newEmployee = new Employee
-           {
-               FirstName = "Larry",
-               LastName = "Page",
-               Email = "larry@google.com",
-               CompanyId = 1
-           };
-           _context.Add(newEmployee);
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+           _context.Add(person);
            _context.SaveChanges();
+           
             return RedirectToAction("Index");
         }
 
