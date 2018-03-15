@@ -22,10 +22,10 @@ app.controller('pFormController', function($scope, pService){
         Person.FirstName = $scope.FirstName;
         Person.LastName = $scope.LastName;
         Person.Email = $scope.Email;
-        Person.CompanyId = $scope.;
+        Person.CompanyId = $scope.CompanyId;
 
         var promisePost = pService.postForm(Person);
-        console.log(Person);
+        console.log($scope.CompanyId);
     }, function (err) {
         alert("Some error occured");
     };

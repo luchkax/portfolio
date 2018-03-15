@@ -57,13 +57,11 @@ namespace employeesFactory.Controllers
         [Route("/addEmployee")]
         public IActionResult Add([FromBody] Employee person)
         {
-            System.Console.WriteLine("-----------------------------------------------"+person.FirstName);
-            System.Console.WriteLine("-----------------------------------------------"+person.CompanyId);
-
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            
             Employee newEmployee = new Employee
             {
                 FirstName = person.FirstName,
