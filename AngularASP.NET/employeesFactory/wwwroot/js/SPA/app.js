@@ -6,13 +6,13 @@ app.controller('pFormController', ['$scope']);
 app.controller('pFormEditController', ['$scope']);
 app.controller('EditCompanyController', ['$scope']);
 
-app.config(function($routeProvider, $httpProvider, $locationProvider){
+app.config(function($routeProvider, $locationProvider){
     $routeProvider.when('/list', {
-        templateUrl: 'Views/list.cshtml',
+        templateUrl: '/Templates/list.html',
         controller: 'pController'
     })
     $routeProvider.when('/form', {
-        templateUrl: '/wwwroot/js/SPA/Views/Form.cshtml',
+        templateUrl: '/Templates/Form.html',
         controller: 'pFormController'
     }) 
     // $routeProvider.when('/editCompany', {
