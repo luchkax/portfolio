@@ -38,7 +38,10 @@ namespace employeesFactory
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseSession();
-            app.UseMvc();
+            app.UseMvc(r => r.MapRoute(
+                name: "default",
+                template: "{controller}/{action}/{id?}",
+                defaults: new { controller = "Home", action = "Index" }));
         }
     }
 }

@@ -32,11 +32,11 @@ namespace employeesFactory.Controllers
 
         [HttpGet]
         [Route("/form")]
-        public IActionResult Form()
-        {
+        // public IActionResult Form()
+        // {
             
-            return View("Form");
-        }
+        //     return View("Form");
+        // }
 
         [HttpPost]
         [Route("/addCompany")]
