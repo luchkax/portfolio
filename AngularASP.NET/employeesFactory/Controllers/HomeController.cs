@@ -30,14 +30,6 @@ namespace employeesFactory.Controllers
             return View();
         }
 
-        [HttpGet]
-        [Route("/form")]
-        // public IActionResult Form()
-        // {
-            
-        //     return View("Form");
-        // }
-
         [HttpPost]
         [Route("/addCompany")]
         public IActionResult Index2()
@@ -91,6 +83,25 @@ namespace employeesFactory.Controllers
         {
             var result  = await _context.Employees.ToListAsync();
             return Json(result);
+        }
+
+        [HttpPost]
+        [Route("/delete_employee/{employeeId}")]
+        public string DeleteEmployee(int employeeId)
+        {
+            if(employeeId != 0)
+            {
+                int id = Convert.ToInt32(employeeId);
+                var employee = _context.Employees.Where(x=>x.EmployeeId == id).FirstOrDefault();
+                _context.Employees.Remove(employee);
+                _context.SaveChanges();
+
+                return "Employee added!";
+            }
+            else
+            {
+                return "Oops! Error occered."; 
+            }
         }
     }
 }

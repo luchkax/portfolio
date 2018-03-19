@@ -5,13 +5,15 @@
             <th>Name</th>
             <th>Address</th>
             <th>Workers</th>
+            <th>Action</th>
         </tr>
         <tr ng-repeat="i in data">
             <td>{{ i.companyId }}</td>
             <td>{{ i.name }}</td>
             <td>{{ i.address }}</td>
             <td>{{ i.workers }}</td>
-
+            <td> <span ng-click="editCompany(i)" class="btnAdd">Edit</span>
+                <span ng-click="deleteCompany(i)" class="btnRed">Delete</span></td>
         </tr>
     </table>
     <hr>
@@ -21,12 +23,16 @@
             <th>Name</th>
             <th>Email</th>
             <th>Company Id</th>
+            <th>Action</th>
         </tr>
         <tr ng-repeat="e in emp">
             <td>{{ e.employeeId }}</td>
             <td>{{ e.firstName }}</td>
             <td>{{ e.email }}</td>
             <td>{{ e.companyId }} </td>
+            <td> 
+                <span ng-click="editEmployee(e)" class="btnAdd">Edit</span>
+                <span ng-click="deleteEmployee(e)" class="btnRed">Delete</span></td>            
         </tr>
     </table>
 </div>

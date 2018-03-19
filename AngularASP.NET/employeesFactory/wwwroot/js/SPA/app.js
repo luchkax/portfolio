@@ -25,8 +25,8 @@ app.config(function($routeProvider,$httpProvider, $locationProvider){
     //     controller: 'FormEditController'
     // }) 
   
-    // $routeProvider.otherwise({
-    //     redirectTo: '/'
-    // });
+    $routeProvider.otherwise({
+        redirectTo: '/'
+    });
     $locationProvider.hashPrefix('');
 })

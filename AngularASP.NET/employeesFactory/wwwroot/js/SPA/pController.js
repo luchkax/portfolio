@@ -13,6 +13,20 @@ app.controller('pController', function($scope, pService){
     }, function(){
         alert('Failed');
     })
+
+    $scope.deleteEmployee = function (e){
+        var getData = pService.DeleteEmp(e.employeeId);
+        console.log(e.employeeId + " controller "+ e.firstName);
+        getData.then(function(msg) {
+            pService.getInfoEmp().then(function(d){
+                $scope.emp = d.data;
+            }, function(){
+                alert('Failed');
+            });
+        }, function(){
+            alert('Error Occured in the record');
+        });
+    }
 });
 
 
