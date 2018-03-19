@@ -6,22 +6,27 @@ app.controller('pFormController', ['$scope']);
 app.controller('pFormEditController', ['$scope']);
 app.controller('EditCompanyController', ['$scope']);
 
-app.config(function($routeProvider, $locationProvider){
+app.config(function($routeProvider,$httpProvider, $locationProvider){
+
+    if (!$httpProvider.defaults.headers.get) {
+        $httpProvider.defaults.headers.get = {};
+    }
+
     $routeProvider.when('/list', {
-        templateUrl: '/Templates/list.html',
+        templateUrl: '/js/SPA/Templates/list.html',
         controller: 'pController'
     })
-    $routeProvider.when('/form', {
-        templateUrl: '/Templates/Form.html',
+    $routeProvider.when('/Form', {
+        templateUrl: '/js/SPA/Templates/Form.html',
         controller: 'pFormController'
-    }) 
+    })
     // $routeProvider.when('/editCompany', {
     //     templateUrl: 'Views/editCompany.html',
     //     controller: 'FormEditController'
     // }) 
   
     // $routeProvider.otherwise({
-    //     redirectTo: ''
+    //     redirectTo: '/'
     // });
-    // $locationProvider.hashPrefix('');
+    $locationProvider.hashPrefix('');
 })
