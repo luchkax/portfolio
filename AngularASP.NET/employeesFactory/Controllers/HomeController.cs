@@ -30,14 +30,34 @@ namespace employeesFactory.Controllers
             return View();
         }
 
+        [HttpGet] 
+        [Route("/api/companies")]
+        public async Task<List<Company>>  ShowAllCompanies()
+        {
+            return await _context.Companies.ToListAsync();
+        }
+
+
+        [HttpGet]
+        [Route("/api/employees")]
+        public async Task<IActionResult> ShowAllEmployees()
+        {
+            var result  = await _context.Employees.ToListAsync();
+            return Json(result);
+        }
+
         [HttpPost]
         [Route("/addCompany")]
-        public IActionResult Index2()
+        public IActionResult AddCompany([FromBody] Company company)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             Company newCompany = new Company
            {
-               Address = "sdsadafdsfafas CA",
-               Name = "asdasfjfdhfdsf",
+               Address = company.Address,
+               Name = company.Name,
            };
            _context.Add(newCompany);
            _context.SaveChanges();
@@ -47,7 +67,7 @@ namespace employeesFactory.Controllers
 
         [HttpPost]
         [Route("/addEmployee")]
-        public IActionResult Add([FromBody] Employee person)
+        public IActionResult AddEmployee([FromBody] Employee person)
         {
             if(!ModelState.IsValid)
             {
@@ -65,24 +85,6 @@ namespace employeesFactory.Controllers
            _context.SaveChanges();
 
             return RedirectToAction("Index");
-        }
-
-
-
-        [HttpGet] 
-        [Route("/api/companies")]
-        public async Task<List<Company>>  ShowAllCompanies()
-        {
-            return await _context.Companies.ToListAsync();
-        }
-
-
-        [HttpGet]
-        [Route("/api/employees")]
-        public async Task<IActionResult> ShowAllEmployees()
-        {
-            var result  = await _context.Employees.ToListAsync();
-            return Json(result);
         }
 
         [HttpPost]

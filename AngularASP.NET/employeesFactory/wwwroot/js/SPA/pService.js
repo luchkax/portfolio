@@ -14,6 +14,11 @@ app.service("pService", function($http){
         return req;
     }
 
+    this.postCompanyForm = function(Company){
+        var req = $http.post('/addCompany', Company);
+        return req;
+    }
+
     this.DeleteEmp = function(id){
         var req = $http.post('/delete_employee/' + id);
         console.log(req);

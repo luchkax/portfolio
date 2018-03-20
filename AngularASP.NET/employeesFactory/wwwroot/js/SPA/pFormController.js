@@ -29,4 +29,14 @@ app.controller('pFormController', function($scope, pService){
     }, function (err) {
         alert("Some error occured");
     };
+
+    $scope.submitCompForm = function() {
+        var Company = {};
+        Company.Name = $scope.Name;
+        Company.Address = $scope.Address;
+        var promisePost = pService.postCompanyForm(Company);
+        console.log($scope.Name);
+    }, function (err) {
+        alert("Some error occured");
+    };
 })

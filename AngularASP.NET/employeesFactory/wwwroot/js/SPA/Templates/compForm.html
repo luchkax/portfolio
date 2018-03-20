@@ -1,0 +1,14 @@
+<div ng-controller="pFormController">
+    <form role="form" ng-submit="submitCompForm()">
+        <h2>Add new company</h2>
+            <div class="form-group">
+              <label for="name">Name</label> 
+              <input class="form-control" name="name" id="name" ng-model="Name"> 
+              <br>
+              <label for="address">Address</label> 
+              <input class="form-control" name="address" id="address" ng-model="Address"> 
+              <br>
+            <button type="submit" value="submit" class="btn btn-primary" >Done</button>
+          </form>
+</div>
+

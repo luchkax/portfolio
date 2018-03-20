@@ -16,14 +16,14 @@ app.config(function($routeProvider,$httpProvider, $locationProvider){
         templateUrl: '/js/SPA/Templates/list.html',
         controller: 'pController'
     })
-    $routeProvider.when('/Form', {
-        templateUrl: '/js/SPA/Templates/Form.html',
+    $routeProvider.when('/employee_form', {
+        templateUrl: '/js/SPA/Templates/empForm.html',
         controller: 'pFormController'
     })
-    // $routeProvider.when('/editCompany', {
-    //     templateUrl: 'Views/editCompany.html',
-    //     controller: 'FormEditController'
-    // }) 
+    $routeProvider.when('/company_form', {
+        templateUrl: '/js/SPA/Templates/compForm.html',
+        controller: 'pFormController'
+    }) 
   
     $routeProvider.otherwise({
         redirectTo: '/'
