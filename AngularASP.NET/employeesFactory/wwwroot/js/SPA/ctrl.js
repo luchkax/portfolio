@@ -1,3 +1,3 @@
 app.controller('ctrl', function($scope, pService){
-    $scope.word = "hello world";
+    $scope.word = "Developed by Nazariy Luchka";
 });

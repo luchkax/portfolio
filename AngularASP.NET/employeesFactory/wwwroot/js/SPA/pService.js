@@ -19,4 +19,10 @@ app.service("pService", function($http){
         console.log(req);
         return req;
     }
+
+    this.DeleteComp = function(id){
+        var req = $http.post('/delete_company/' + id);
+        console.log(req);
+        return req;
+    }
 })

@@ -103,5 +103,32 @@ namespace employeesFactory.Controllers
                 return "Oops! Error occered."; 
             }
         }
+
+        [HttpPost]
+        [Route("/delete_company/{companyId}")]
+        public string DeleteCompany(int companyId)
+        {
+            if(companyId != 0)
+            {
+                int id = Convert.ToInt32(companyId);
+                var company = _context.Companies.Where(x=>x.CompanyId == id).FirstOrDefault();
+                // if(company.Workers != null)
+                // {
+                    foreach(var x in company.Workers)
+                    {
+                        System.Console.WriteLine(x.FirstName + " =-----------------------");
+                        x.CompanyId = null;
+                    }
+                // }
+                _context.Companies.Remove(company);
+                _context.SaveChanges();
+
+                return "Company added!";
+            }
+            else
+            {
+                return "Oops! Error occered."; 
+            }
+        }
     }
 }

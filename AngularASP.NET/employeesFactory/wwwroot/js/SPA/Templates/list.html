@@ -11,8 +11,8 @@
             <td>{{ i.companyId }}</td>
             <td>{{ i.name }}</td>
             <td>{{ i.address }}</td>
-            <td>{{ i.workers }}</td>
-            <td> <span ng-click="editCompany(i)" class="btnAdd">Edit</span>
+            <td>--------------</td>
+            <td> <span ng-click="editCompany(i)" class="btnAdd">Edit |</span>
                 <span ng-click="deleteCompany(i)" class="btnRed">Delete</span></td>
         </tr>
     </table>
@@ -31,7 +31,7 @@
             <td>{{ e.email }}</td>
             <td>{{ e.companyId }} </td>
             <td> 
-                <span ng-click="editEmployee(e)" class="btnAdd">Edit</span>
+                <span ng-click="editEmployee(e)" class="btnAdd">Edit |</span>
                 <span ng-click="deleteEmployee(e)" class="btnRed">Delete</span></td>            
         </tr>
     </table>

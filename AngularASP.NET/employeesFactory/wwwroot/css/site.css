@@ -2,3 +2,24 @@
 .form-group{
     width: 400px;
 }
+table {
+    border-collapse:separate;
+    border:solid black 1px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+}
+
+td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+
+th {
+    background-color: lightblue;
+    border-top: none;
+    padding-right: 10px;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}
