@@ -27,7 +27,7 @@ app.controller('pController', function($scope, pService){
         });
     }
 
-    pService.getInfoEmp().then(function(d){
+    $scope.preGetInfoEmp = pService.getInfoEmp().then(function(d){
         $scope.emp = d.data;
 
         angular.forEach($scope.emp, function (obj) {
@@ -82,7 +82,7 @@ app.controller('pController', function($scope, pService){
 
     $scope.deleteCompany = function (i){
         var getCompData = pService.DeleteComp(i.companyId);
-        console.log(i.companyId + " controller ");
+        console.log(i.companyId + i.name);
         getCompData.then(function(msg) {
             pService.getInfo().then(function(d){
                 $scope.data = d.data;

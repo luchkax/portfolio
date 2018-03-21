@@ -26,6 +26,7 @@ app.controller('pFormController', function($scope, pService){
 
         var promisePost = pService.postForm(Person);
         console.log($scope.CompanyId);
+        window.location = "/#/list", $scope.preGetInfoEmp;
     }, function (err) {
         alert("Some error occured");
     };
@@ -35,7 +36,7 @@ app.controller('pFormController', function($scope, pService){
         Company.Name = $scope.Name;
         Company.Address = $scope.Address;
         var promisePost = pService.postCompanyForm(Company);
-        // window.location = "/#/list", $scope.preGetInfo;
+        window.location = "/#/list", $scope.preGetInfo;
         
     }, function (err) {
         alert("Some error occured");
