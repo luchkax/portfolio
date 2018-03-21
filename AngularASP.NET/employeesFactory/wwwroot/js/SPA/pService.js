@@ -19,6 +19,16 @@ app.service("pService", function($http){
         return req;
     }
 
+    this.updateCompanyPost = function(Company){
+        var req = $http.post('/updateCompany', Company)
+        return req;
+    }
+
+    this.updateEmployeePost = function(Employee){
+        var req = $http.post('/update_employee', Employee)
+        return req;
+    }
+
     this.DeleteEmp = function(id){
         var req = $http.post('/delete_employee/' + id);
         console.log(req);

@@ -35,7 +35,8 @@ app.controller('pFormController', function($scope, pService){
         Company.Name = $scope.Name;
         Company.Address = $scope.Address;
         var promisePost = pService.postCompanyForm(Company);
-        console.log($scope.Name);
+        // window.location = "/#/list", $scope.preGetInfo;
+        
     }, function (err) {
         alert("Some error occured");
     };

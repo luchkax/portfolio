@@ -1,6 +1,7 @@
 <div ng-controller="pController">
     <table>
         <tr>
+            <th></th>
             <th>CompanyId</th>
             <th>Name</th>
             <th>Address</th>
@@ -8,17 +9,29 @@
             <th>Action</th>
         </tr>
         <tr ng-repeat="i in data">
+            <th scope="row">
+                {{$index+1}}
+            </th>
             <td>{{ i.companyId }}</td>
-            <td>{{ i.name }}</td>
-            <td>{{ i.address }}</td>
+            <td>
+                <span ng-hide="i.EditMode">{{ i.name }}</span>
+                <input ng-show="i.EditMode" type="text" ng-model="i.name" class="form-control">
+            </td>
+            <td><span ng-hide="i.EditMode">{{ i.address }}</span>
+                <input ng-show="i.EditMode" type="text" ng-model="i.address" class="form-control"></td>
             <td>--------------</td>
-            <td> <span ng-click="editCompany(i)" class="btnAdd">Edit |</span>
-                <span ng-click="deleteCompany(i)" class="btnRed">Delete</span></td>
+            <td> 
+                <a href="javascript:;" ng-hide="i.EditMode" ng-click="toggleEdit($index)">Edit</a>
+                <span ng-show="i.EditMode" ng-click="updateCompany($index)" class="btnAdd">Save |</span>
+                <span ng-show="i.EditMode" ng-click="cancelCompany($index)" class="btnAdd">Cancel</span>   
+                <span ng-hide="i.EditMode" ng-click="deleteCompany(i)" class="btnRed">Delete</span>
+            </td>
         </tr>
     </table>
     <hr>
     <table>
         <tr>
+            <th></th>
             <th>Employee Id</th>
             <th>Name</th>
             <th>Email</th>
@@ -26,13 +39,22 @@
             <th>Action</th>
         </tr>
         <tr ng-repeat="e in emp">
+            <th scope="row">
+                {{$index+1}}                
+            </th>
             <td>{{ e.employeeId }}</td>
-            <td>{{ e.firstName }}</td>
-            <td>{{ e.email }}</td>
-            <td>{{ e.companyId }} </td>
+            <td><span ng-hide="e.EditMode">{{ e.firstName }}</span>
+                <input ng-show="e.EditMode" type="text" ng-model="e.firstName" class="form-control"></td>
+            <td><span ng-hide="e.EditMode">{{ e.email }}</span>
+                <input ng-show="e.EditMode" type="text" ng-model="e.email" class="form-control"></td>
+            <td><span ng-hide="e.EditMode">{{ e.companyId }}</span>
+                <input ng-show="e.EditMode" type="text" ng-model="e.companyId" class="form-control"></td>
             <td> 
-                <span ng-click="editEmployee(e)" class="btnAdd">Edit |</span>
-                <span ng-click="deleteEmployee(e)" class="btnRed">Delete</span></td>            
+                    <a href="javascript:;" ng-hide="i.EditMode" ng-click="toggleEditE($index)">Edit</a>
+                    <span ng-show="e.EditMode" ng-click="updateEmployee($index)" class="btnAdd">Save |</span>
+                    <span ng-show="e.EditMode" ng-click="cancelEmployee($index)" class="btnAdd">Cancel</span>   
+                    <span ng-hide="e.EditMode" ng-click="deleteEmployee(e)" class="btnRed">Delete</span></td>
+                       
         </tr>
     </table>
 </div>

@@ -64,6 +64,39 @@ namespace employeesFactory.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        [Route("/updateCompany")]
+        public IActionResult UpdateCompany([FromBody] Company company)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            Company thisCompany = _context.Companies.Where(c=>c.CompanyId == company.CompanyId).SingleOrDefault();
+            thisCompany.Name = company.Name;
+            thisCompany.Address = company.Address;
+
+           _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        
+        [HttpPost]
+        [Route("/update_employee")]
+        public IActionResult UpdateEmployee([FromBody] Employee employee)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            Employee thisEmployee = _context.Employees.Where(c=>c.EmployeeId == employee.EmployeeId).SingleOrDefault();
+            thisEmployee.FirstName = employee.FirstName;
+            thisEmployee.Email = employee.Email;
+            thisEmployee.CompanyId = employee.CompanyId;
+
+           _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         [Route("/addEmployee")]
