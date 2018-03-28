@@ -1,0 +1,6 @@
+C:\Users\nazariy\Documents\Visual Studio 2015\Projects\WcfService1\WcfService1\ConsoleClient\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Users\nazariy\Documents\Visual Studio 2015\Projects\WcfService1\WcfService1\ConsoleClient\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Users\nazariy\Documents\Visual Studio 2015\Projects\WcfService1\WcfService1\ConsoleClient\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Users\nazariy\Documents\Visual Studio 2015\Projects\WcfService1\WcfService1\ConsoleClient\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Users\nazariy\Documents\Visual Studio 2015\Projects\WcfService1\WcfService1\ConsoleClient\ConsoleClient\obj\Debug\ConsoleClient.pdb
+C:\Users\nazariy\Documents\Visual Studio 2015\Projects\WcfService1\WcfService1\ConsoleClient\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
