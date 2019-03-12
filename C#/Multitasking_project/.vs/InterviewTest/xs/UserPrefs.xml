@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{FDF08F97-595F-4236-A293-B7F41937C8EF}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="InterviewTest/Controllers/Home/HomeController.cs">
+    <Files>
+      <File FileName="InterviewTest/Controllers/Home/HomeController.cs" Line="29" Column="16" />
+      <File FileName="InterviewTest/Views/Home/CustomValidator.cshtml" Line="9" Column="24" />
+      <File FileName="InterviewTest/Models/FormD.cs" Line="8" Column="32" />
+      <File FileName="InterviewTest/Web.config" Line="14" Column="31" />
+      <File FileName="InterviewTest/Views/Home/BannerTrackingReport.cshtml" Line="2" Column="1" />
+      <File FileName="InterviewTest/Views/Home/HotelsWebService.cshtml" Line="33" Column="15" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="InterviewTest" expanded="True">
+            <Node name="InterviewTest" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="bootstrap.min.js" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.InterviewTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/LuchkaMAC/Desktop/sln/InterviewTest/Controllers/Home/HomeController.cs" relfile="InterviewTest/Controllers/Home/HomeController.cs" line="31" column="119" />
+      <Breakpoint file="/Users/LuchkaMAC/Desktop/sln/InterviewTest/Controllers/Home/HomeController.cs" relfile="InterviewTest/Controllers/Home/HomeController.cs" line="148" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

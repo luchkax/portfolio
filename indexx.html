@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
 <body>
+    <button onclick="openWindow()">Open "myWindow"</button>
 
-<button onclick="openWin()">Open "myWindow"</button>
-<button onclick="closeWin()">Close "myWindow"</button>
 
-<script>
-var myWindow;
+    <script>
+        function openWindow() {
+            // var windowSize = {
+            //     width: 500,
+            //     height: 500,
+            // };
+            // var windowLocation = {
+            //     left: (window.screen.availLeft + (window.screen.availWidth / 2)) - (windowSize.width / 2),
+            //     top: (window.screen.availTop + (window.screen.availHeight / 2)) - (windowSize.height / 2)
+            // };
+            // window.open("https://www.youtube.com/", '_blank', 'width=' + windowSize.width + ', height=' + windowSize.height + ', left=' + windowLocation.left + ', top=' + windowLocation.top);
+////////
 
-function openWin() {
-    myWindow = window.open("", "myWindow", "width=200,height=100");
-    myWindow.document.write("<p>This is 'myWindow'</p>");
-}
+var hwtop=0-window.screen.height; //resolves 2nd monitor issue
+    var hwwidth=820;
+    var hwleft=0-window.screen.width;  //resolves 2nd monitor issue
+    var hwheight=screen.availHeight-50;
+    var specs='menubar=0,status=0,toolbar=0,location=0,scrollbars=0,top='+hwtop+',width='+hwwidth+',height='+hwheight+',left='+hwleft+',resizable=1';
+window.open('https://www.youtube.com/', '_hWindow', specs);
 
-function closeWin() {
-    myWindow.close();
-}
-</script>
+            }
+    </script>
 
 </body>
+
 </html>

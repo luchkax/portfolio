@@ -1,0 +1,34 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Hotels Web Service";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<p>@Html.ActionLink("< Back", "Index")</p>
+
+<p>
+    Please display the Hotel Name, Airport Code, and Address for the hotel with the ID of 105304 using this web service:
+    <br />
+    <a href="http://ws-design.idevdesign.net/hotels.asmx?op=GetHotel">http://ws-design.idevdesign.net/hotels.asmx?op=GetHotel</a>
+</p>
+
+<p>
+    This link gives more details related to this web service:
+    <br />
+    <a href="http://ws-design.idevdesign.net/docs/hotels.html">http://ws-design.idevdesign.net/docs/hotels.html</a>
+</p>
+
+<p>
+    You will need the following credentials to access the web service:<br />
+    <br />
+    <strong>Login</strong>: aeTraining<br />
+    <strong>Password</strong>: ZZZ
+</p>
+@{
+    var field = ViewBag.DisplayData["soap:Envelope"]["soap:Body"].GetHotelResponse.GetHotelResult;
+}
+<h2>General Information:</h2>
+<h1> @field["Name"].Value </h1>
+<h3> Airport: @field["AirportCode"].Value;</h3> 
+<h3> @field["Address1"].Value, @field["City"].Value, @field["StateProvince"].Value @field["PostalCode"].Value</h3>
