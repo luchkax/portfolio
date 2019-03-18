@@ -1,0 +1,10 @@
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/obj/x86/Debug/WalkerSandsCode.csprojAssemblyReference.cache
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/obj/x86/Debug/WalkerSandsCode.csproj.CoreCompileInputs.cache
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/bin/Debug/WalkerSandsCode.exe
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/bin/Debug/WalkerSandsCode.pdb
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/obj/x86/Debug/WalkerSandsCode.exe
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/obj/x86/Debug/WalkerSandsCode.pdb
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/bin/Debug/Newtonsoft.Json.dll
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/bin/Debug/Newtonsoft.Json.pdb
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/bin/Debug/Newtonsoft.Json.xml
+/Users/LuchkaMAC/Desktop/WSCode/WalkerSandsCode/WalkerSandsCode/obj/x86/Debug/WalkerSandsCode.csproj.CopyComplete
