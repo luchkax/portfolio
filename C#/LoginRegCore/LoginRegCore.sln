@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginRegCore", "LoginRegCore\LoginRegCore.csproj", "{76FDB681-0B2C-4212-B300-4CD4F57BA4D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76FDB681-0B2C-4212-B300-4CD4F57BA4D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76FDB681-0B2C-4212-B300-4CD4F57BA4D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76FDB681-0B2C-4212-B300-4CD4F57BA4D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76FDB681-0B2C-4212-B300-4CD4F57BA4D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
