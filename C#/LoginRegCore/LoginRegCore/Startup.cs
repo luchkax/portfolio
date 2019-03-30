@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace LoginRegCore
 {
@@ -31,7 +32,7 @@ namespace LoginRegCore
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddDbContext<BloggingContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
+            services.AddDbContext<AppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

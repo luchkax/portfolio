@@ -17,7 +17,6 @@
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/Razor/Views/Home/About.g.cshtml.cs
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/Razor/Views/Home/Contact.g.cshtml.cs
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
-/Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/Razor/Views/Home/Privacy.g.cshtml.cs
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs
@@ -30,3 +29,4 @@
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/LoginRegCore.dll
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/LoginRegCore.pdb
 /Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/LoginRegCore.csproj.CopyComplete
+/Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/obj/Debug/netcoreapp2.1/Razor/Views/Home/Login.g.cshtml.cs

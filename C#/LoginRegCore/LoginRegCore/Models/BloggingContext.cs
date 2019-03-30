@@ -9,12 +9,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LoginRegCore
 {
-    public class BloggingContext : DbContext
+    public class AppContext : DbContext
     {
-        public BloggingContext(DbContextOptions<BloggingContext> options) : base(options) { }
+        public AppContext(DbContextOptions<AppContext> options) : base(options) { }
 
-        public virtual DbSet<Register> Users { get; set; }
-
+        public virtual DbSet<User> Users { get; set; }
 
     }
 }

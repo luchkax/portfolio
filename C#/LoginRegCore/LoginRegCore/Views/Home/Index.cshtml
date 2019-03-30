@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model LoginRegCore.Models.Register
 <body>
 
     <form action="Home/register" method="post">
@@ -10,14 +10,24 @@
             <p>Please fill in this form to create an account.</p>
             <hr>
 
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="Email" required>
+            <label for="FirstName"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="FirstName" required>
+            <span asp-validation-for="FirstName" style="color: red"></span>
             <br />
-            <label for="psw"><b>Password</b></label>
+            <label for="LastName"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="LastName" required>
+            <span asp-validation-for="LastName" style="color: red"></span>
+            <br />
+            <label for="Email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="Email" required>
+            <span asp-validation-for="Email" style="color: red"></span>
+            <br />
+            <label for="Password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="Password" required>
             <br />
-            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <label for="PasswordRep"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="PasswordRep" required>
+            <span asp-validation-for="PasswordRep" style="color: red"></span>
             <hr>
             <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
@@ -25,7 +35,7 @@
         </div>
 
         <div class="container signin">
-            <p>Already have an account? <a href="#">Sign in</a>.</p>
+            <p>Already have an account? <a href="/log_in">Sign in</a>.</p>
         </div>
     </form>
 
