@@ -33,8 +33,8 @@ namespace LoginRegCore
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddDbContext<AppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +53,7 @@ namespace LoginRegCore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

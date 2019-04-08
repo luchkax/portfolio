@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{76FDB681-0B2C-4212-B300-4CD4F57BA4D7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="LoginRegCore/Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LoginRegCore/Controllers/NotesController.cs">
     <Files>
-      <File FileName="LoginRegCore/Views/Home/Index.cshtml" Line="29" Column="80" />
-      <File FileName="LoginRegCore/Controllers/HomeController.cs" Line="109" Column="43" />
-      <File FileName="LoginRegCore/Models/Identify.cs" Line="65" Column="45" />
-      <File FileName="LoginRegCore/Views/Home/Login.cshtml" Line="6" Column="1" />
+      <File FileName="LoginRegCore/Views/Home/Index.cshtml" Line="7" Column="53" />
+      <File FileName="LoginRegCore/Controllers/HomeController.cs" Line="62" Column="14" />
+      <File FileName="LoginRegCore/Controllers/NotesController.cs" Line="48" Column="1" />
+      <File FileName="LoginRegCore/Views/Notes/Notes.cshtml" Line="2" Column="31" />
+      <File FileName="LoginRegCore/Models/Identify.cs" Line="37" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="LoginRegCore" expanded="True">
+          <Node name="LoginRegCore" expanded="True" selected="True">
             <Node name="LoginRegCore" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
+                <Node name="Notes" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -25,12 +25,16 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.LoginRegCore PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../LoginRegCore/Controllers/HomeController.cs" line="157" offsetX="295" offsetY="2340" expression="ok" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/Controllers/HomeController.cs" relfile="LoginRegCore/Controllers/HomeController.cs" line="39" column="1" />
-      <Breakpoint file="/Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/Controllers/HomeController.cs" relfile="LoginRegCore/Controllers/HomeController.cs" line="72" column="88" />
+      <Breakpoint file="/Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/Controllers/HomeController.cs" relfile="LoginRegCore/Controllers/HomeController.cs" line="120" column="88" />
+      <Breakpoint file="/Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/Controllers/HomeController.cs" relfile="LoginRegCore/Controllers/HomeController.cs" line="144" column="1" />
+      <Breakpoint file="/Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/Controllers/HomeController.cs" relfile="LoginRegCore/Controllers/HomeController.cs" line="172" column="1" />
+      <Breakpoint file="/Users/LuchkaMAC/Projects/LoginRegCore/LoginRegCore/Controllers/HomeController.cs" relfile="LoginRegCore/Controllers/HomeController.cs" line="93" column="23" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

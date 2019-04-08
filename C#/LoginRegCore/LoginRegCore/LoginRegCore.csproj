@@ -10,4 +10,7 @@
     <PackageReference Include="EntityFramework" Version="6.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Notes\" />
+  </ItemGroup>
 </Project>

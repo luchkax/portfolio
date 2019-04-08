@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{C7ED8690-0E59-4A60-ABD1-AF5D7FC0FB15}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VituCoding/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="VituCoding/Controllers/HomeController.cs" Line="54" Column="30" />
+      <File FileName="VituCoding/Views/Home/Index.cshtml" Line="46" Column="18" />
+      <File FileName="VituCoding/Models/StatementData.cs" Line="33" Column="23" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="VituCoding" expanded="True">
+            <Node name="VituCoding" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.VituCoding PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

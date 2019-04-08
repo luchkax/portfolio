@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var total = ViewBag.BillSum + ViewBag.nonBillSum;
+}
+@model VituCoding.Models.Transactions
+<br />
+<form action="getACII">
+    <label for="username">Name</label>
+    <input type="text" name="username" placeholder="Name goes here" />
+    <input type="submit" />
+</form>
+@if (@ViewBag.Result != null)
+{<h2>@ViewBag.Result = @ViewBag.Sum</h2>}
+<hr />
+
+<h4>Total amount spent in 30 days: <span style="color:blue">$@total</span></h4>
+<h4>Total amount of bills: <span style="color:blue">$@ViewBag.BillSum </span></h4>
+
+<hr />
+<table>
+    <tr>
+        <th>Details</th>
+        <th>Posting Date</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Amount</th>
+
+    </tr>
+
+    @{
+        foreach (var item in @ViewBag.Transactions)
+        {
+            <tr>
+                <th>@item.Details</th>
+                <th>@item.PostingDate</th>
+                <th>@item.Description</th>
+                @{if (@item.isBill == true)
+                    {
+                        <th>BILL</th>}
+                    else
+                    {
+                        <th>-</th>
+                    }
+                }
+                <th>@item.Amount</th>
+            </tr>
+        }
+
+    }
+
+</table>

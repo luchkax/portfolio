@@ -19,9 +19,26 @@ namespace LoginRegCore.Models
 
         private DateTime Date { get; set; }
 
+
+    }
+
+    public class Note
+    {
+        [Key]
+        public int NoteID { get; set; }
+
+        public int UserID { get; set; }
+
+        [Required(ErrorMessage = "Title cannot be empty")]
+        [MinLength(1)]
+        public string Title { get; set; }
+
+        public string Content { get; set; }
+
     }
 
 
+    //ViewModels
     public class Register  
     {
         [Key]

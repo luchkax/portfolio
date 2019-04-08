@@ -23,21 +23,59 @@ namespace LoginRegCore.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
 
-            var users = _context.Users.FromSql("sp_allusers").ToList();
-            List<User> usrs = _context.Users.ToList();
+        private bool CheckLogStatus()
+        {
+            int? id = HttpContext.Session.GetInt32("UserID");
+            if (id == null)
+            {
+                TempData["UserError"] = "You must be logged in!";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
+        [Route("logout")]
+        public ActionResult LogOut()
+        {
+            try
+            {
+                HttpContext.Session.Clear();
+                return RedirectToAction("GetLogin");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+            public IActionResult Index()
+        {
+            if (CheckLogStatus() == true)
+            {
+                return RedirectToAction("NoteRender", "Notes");
+            }
+            //var users = _context.Users.FromSql("sp_allusers").ToList();
+            //List<User> usrs = _context.Users.ToList();
 
             return View();
         }
 
-        [ActionName("log_in")]
-        public IActionResult Login()
+        [Route("/log_in")]
+        public IActionResult GetLogin()
         {
-            ViewData["Message"] = "Your login page.";
+            if(CheckLogStatus() == true)
+            {
+                return RedirectToAction("NoteRender", "Notes");
+            }
 
-            return View("Login");
+
+            return View();
         }
 
         [HttpPost]
@@ -50,40 +88,49 @@ namespace LoginRegCore.Controllers
             }
             if (ModelState.IsValid)
             {
-                User exist = _context.Users.FromSql($"sp_IfExists {reg.Email}").SingleOrDefault();
-                if(exist != null)
+                try
                 {
-                    ModelState.AddModelError("Email", "User already exists with given email");
-                    return View("Index", reg);
+                    User exist = _context.Users.FromSql($"sp_IfExists {reg.Email}").SingleOrDefault();
+                    if (exist != null)
+                    {
+                        ModelState.AddModelError("Email", "User already exists with given email");
+                        return View("Index", reg);
+                    }
+                    if (reg.Password != reg.PasswordRep)
+                    {
+                        ModelState.AddModelError("Password", "Passwords should match");
+                        return View("Index", reg);
+                    }
+                    byte[] salt;
+                    new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+
+                    var pdkdf2 = new Rfc2898DeriveBytes(reg.Password, salt, 10000);
+                    byte[] hash = pdkdf2.GetBytes(20);
+                    byte[] hashBytes = new byte[36];
+
+                    Array.Copy(salt, 0, hashBytes, 0, 16);
+                    Array.Copy(hash, 0, hashBytes, 16, 20);
+
+                    //PasswordHasher<Register> hasher = new PasswordHasher<Register>();
+                    //string hashed = hasher.HashPassword(reg, reg.Password);
+
+                    string savedHashPass = Convert.ToBase64String(hashBytes);
+
+
+                    var newuser = _context.Users.FromSql("sp_CreateUser @p0, @p1, @p2, @p3",
+                        parameters: new[] { reg.FirstName, reg.LastName, reg.Email, savedHashPass }).SingleOrDefault();
+
+
+                    HttpContext.Session.SetInt32("UserID", newuser.UserID); //set userid to session
+
+                    return RedirectToAction("NoteRender", "Notes");
                 }
-                if(reg.Password != reg.PasswordRep)
+                catch (Exception e)
                 {
-                    ModelState.AddModelError("Password", "Passwords should match");
-                    return View("Index", reg);
+                    Console.WriteLine(e.Message);
+                    ViewData["Error"] = e.Message;
+                    return View("Index");
                 }
-                byte[] salt;
-                new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
-
-                var pdkdf2 = new Rfc2898DeriveBytes(reg.Password, salt, 10000);
-                byte[] hash = pdkdf2.GetBytes(20);
-                byte[] hashBytes = new byte[36];
-
-                Array.Copy(salt, 0, hashBytes, 0, 16);
-                Array.Copy(hash, 0, hashBytes, 16, 20);
-
-                //PasswordHasher<Register> hasher = new PasswordHasher<Register>();
-                //string hashed = hasher.HashPassword(reg, reg.Password);
-
-                string savedHashPass = Convert.ToBase64String(hashBytes);
-
-
-                var newuser = _context.Users.FromSql("sp_CreateUser @p0, @p1, @p2, @p3", 
-                    parameters: new[] { reg.FirstName, reg.LastName, reg.Email, savedHashPass }).SingleOrDefault();
-
-
-                //HttpContext.Session.SetInt32("UserID", 1); //set userid to session
-
-                return RedirectToAction("Contact");
             }
             else
             {
@@ -92,12 +139,6 @@ namespace LoginRegCore.Controllers
             }
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
 
         [HttpPost]
         [ActionName("login")]
@@ -105,29 +146,53 @@ namespace LoginRegCore.Controllers
         {
             if (log == null)
             {
-                return View("Login", log);
+                return View("GetLogin", log);
             }
             if (ModelState.IsValid)
             {
-                User exist = _context.Users.FromSql($"sp_IfExists {log.Email}").SingleOrDefault();
-                if(exist != null)
+                try
                 {
-                    ModelState.AddModelError("Email", "User with given email do not exists");
-                    return View("Login", log);
+                    User exist = _context.Users.FromSql($"sp_IfExists {log.Email}").SingleOrDefault();
+                    if (exist == null)
+                    {
+                        ModelState.AddModelError("Email", "User with given email do not exists");
+                        return View("GetLogin", log);
+                    }
+
+                    byte[] hashbytes = Convert.FromBase64String(exist.Password);
+                    byte[] salt = new byte[16];
+                    Array.Copy(hashbytes, 0, salt, 0, 16);
+                    var pbkdf2 = new Rfc2898DeriveBytes(log.Password, salt, 10000);
+                    byte[] hash = pbkdf2.GetBytes(20);
+
+                    int ok = 1;
+                    for (int i = 0; i < 20; i++)
+                    {
+                        if (hashbytes[i + 16] != hash[i]) ok = 0;
+                    }
+                    if (ok == 1)
+                    {
+                        Console.WriteLine("Success");
+                        HttpContext.Session.SetInt32("UserID", exist.UserID);
+                        HttpContext.Session.SetString("FirstName", exist.FirstName);
+
+                        return RedirectToAction("NoteRender", "Notes");
+                    }
                 }
-                byte[] hashbytes = Convert.FromBase64String(exist.Password);
-                byte[] salt = new byte[16];
-                Array.Copy(hashbytes, 0, salt, 0, 16);
-                var pbkdf2 = new Rfc2898DeriveBytes(log.Password, salt, 10000);
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    ViewData["Error"] = e.Message;
+                    return View("GetLogin");
+                }
+                ModelState.AddModelError("Password", "Password invalid. Please try again");
+                return View("GetLogin", log);
 
-                byte[] hash = pbkdf2.GetBytes(20);
-
-                return RedirectToAction("Contact");
             }
             else
             {
                 Console.WriteLine("Input Error");
-                return View("Login", log);
+                return View("GetLogin", log);
             }
         }
 
