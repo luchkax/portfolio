@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Note";
+}
+@model Note
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="modal fade" id="get-note" tabindex="-1" role="dialog" aria-labelledby="getNoteLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @{
+        if (@ViewBag.Render == "Add")
+        {
+            <div class="modal-header">
+                <h5 class="modal-title" id="addNoteLabel">Add note</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-controller="Notes" asp-action="AddNote" method="post">
+                    <div class="form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Note</label>
+                        <textarea asp-for="Content" class="form-control" name="Content"></textarea>
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+}
+else if (@ViewBag.Render == "Display")
+{
+        <div class="modal-header">
+            <h3>@ViewBag.Note.Title</h3>
+        </div>
+        <div class="modal-body">
+            <p>@ViewBag.Note.Content</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="btnClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Edit</button>
+        </div>
+
+}
+
+            }
+
+
+        </div>
+        </div>
+    </div>

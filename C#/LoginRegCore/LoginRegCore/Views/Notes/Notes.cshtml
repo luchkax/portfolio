@@ -1,17 +1,74 @@
 ﻿@{
     ViewData["Title"] = "Notes";
 }
+@model Note
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
-<a href="/logout">Logout</a>
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+<div class="leftPane" style="display:inline-block; margin-right: 25%">
+
+
+<button type="button" id="getnote" class="btn btn-primary" data-toggle="modal" data-target="#get-note" >
+    Add note
+</button>
+
+<div class="modal fade" id="get-note" tabindex="-1" role="dialog" aria-labelledby="getNoteLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addNoteLabel">Add note</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form asp-controller="Notes" asp-action="AddNote" method="post">
+                            <div class="form-group">
+                                <label asp-for="Title"></label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Note</label>
+                                <textarea asp-for="Content" class="form-control" name="Content"></textarea>
+                                <span asp-validation-for="Content" class="text-danger"></span>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Create</button>
+                            </div>
+                        </form>
+                    </div>
+            
+
+
+        </div>
+    </div>
+</div>
+
+<br />
+<div id="modal-placeholder"></div>
+<ul class="noteslist">
+    @{
+        foreach (var note in @ViewBag.UserNotes)
+        {
+            <li class="subnoteslist">
+                <a id="title_list" data-target=@note.NoteID> @note.Title</a>
+                <a id="title_edit" data-target=@note.NoteID> <i class="material-icons">menu</i></a>
+                <a href="delete/@note.NoteID"><i class="material-icons">delete</i></a>
+            </li>
+        }
+    }
+</ul>
+<a href="/logout">Logout</a>
+    </div>
+<div class="rightPane" style="display:inline-block; vertical-align:top">
+    
+    <p class="note_content" style="font-size:20px"></p>
+    <input id="content_input" class="form-control" value="" type="hidden" />
+    <input class="form-control" id="save_title" type="hidden" value="Save" />
+</div>
+
